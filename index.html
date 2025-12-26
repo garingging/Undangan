@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan | Robin & Karmilah</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#fafafa;
+color:#333;
+text-align:center;
+}
+section{padding:50px 20px}
+h1,h2,h3{font-family:'Playfair Display';color:#7A1E1E}
+
+/* COVER */
+.cover{
+min-height:100vh;
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('https://i.ibb.co/7z6ZzVJ/ulos.jpg');
+background-size:cover;
+background-position:center;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+.cover h1{
+color:#FFD700;
+font-size:36px;
+margin:20px 0 10px;
+}
+
+/* FOTO COVER */
+.cover-photo{
+width:200px;
+height:200px;
+border-radius:50%;
+border:6px solid #FFD700;
+padding:6px;
+background:white;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+.cover-photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+}
+
+.btn{
+background:#7A1E1E;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+display:inline-block;
+margin-top:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+max-width:500px;
+margin:20px auto;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+/* GALERI */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+max-width:800px;
+margin:auto;
+}
+.gallery img{
+width:100%;
+border-radius:12px;
+}
+
+/* REKENING */
+.rekening{
+background:#f3f3f3;
+padding:15px;
+border-radius:10px;
+margin:10px 0;
+}
+button{
+background:#7A1E1E;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* MUSIC */
+.music{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#7A1E1E;
+color:white;
+padding:10px 15px;
+border-radius:50px;
+cursor:pointer;
+z-index:999;
+}
+
+footer{
+background:#7A1E1E;
+color:white;
+padding:20px;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="music" loop>
+<source src="https://www.mfiles.co.uk/mp3-downloads/amazing-grace.mp3" type="audio/mp3">
+</audio>
+<div class="music" onclick="toggleMusic()">🎵</div>
+
+<!-- COVER -->
+<section class="cover">
+<p>Undangan Pernikahan</p>
+
+<div class="cover-photo">
+  <img src="foto-cover.jpg" alt="Robin & Karmilah">
+</div>
+
+<h1>Robin Damanik<br>&<br>Karmilah</h1>
+<p>07 Januari 2026</p>
+
+<a href="#ayat" class="btn" onclick="playMusic()">Buka Undangan</a>
+</section>
+
+<!-- AYAT -->
+<section id="ayat">
+<div class="card">
+<h3>Firman Tuhan</h3>
+<p><i>
+“Demikianlah mereka bukan lagi dua, melainkan satu.  
+Apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia.”
+<br><br>(Matius 19:6)
+</i></p>
+</div>
+</section>
+
+<!-- MEMPELAI -->
+<section>
+<h2>Mempelai</h2>
+
+<div class="card">
+<h3>Robin Damanik</h3>
+<p>Putra dari<br>
+<b>Bapak Rudin Damanik</b><br>&<br>
+<b>Ibu Lesri Purba</b></p>
+</div>
+
+<div class="card">
+<h3>Karmilah</h3>
+<p>Putri dari<br>
+<b>Bapak Kasmin</b><br>&<br>
+<b>Ibu Mari</b></p>
+</div>
+</section>
+
+<!-- ACARA -->
+<section>
+<h2>Detail Acara</h2>
+
+<div class="card">
+<h3>Pemberkatan Pernikahan</h3>
+<p>📅 07 Januari 2026<br>
+⏰ 10.00 WIB - Selesai<br>
+📍 GKPS Mardosniuhur<br>Kec. Purba</p>
+</div>
+
+<div class="card">
+<h3>Acara Adat</h3>
+<p>📅 07 Januari 2026<br>
+⏰ 12.00 WIB - Selesai<br>
+📍 Lapangan SD N Mardosniuhur<br>Kec. Purba</p>
+</div>
+</section>
+
+<!-- COUNTDOWN -->
+<section>
+<h2>Menuju Hari Bahagia</h2>
+<h3 id="countdown"></h3>
+</section>
+
+<!-- GALERI -->
+<section>
+<h2>Galeri Foto</h2>
+<div class="gallery">
+<img src="https://picsum.photos/400?1">
+<img src="https://picsum.photos/400?2">
+<img src="https://picsum.photos/400?3">
+<img src="https://picsum.photos/400?4">
+<img src="https://picsum.photos/400?5">
+<img src="https://picsum.photos/400?6">
+</div>
+</section>
+
+<!-- HADIAH -->
+<section>
+<h2>Hadiah Pernikahan</h2>
+<div class="card">
+
+<div class="rekening">
+<b>BRI</b><br>
+802001012636536<br>
+A.n Robin Damanik<br>
+<button onclick="salin('802001012636536')">Salin</button>
+</div>
+
+<div class="rekening">
+<b>BCA</b><br>
+5876052926<br>
+A.n Karmilah<br>
+<button onclick="salin('5876052926')">Salin</button>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>Terima kasih atas doa dan kehadiran Bapak/Ibu/Saudara/i</p>
+<b>Robin & Karmilah</b>
+</footer>
+
+<script>
+// COUNTDOWN
+const target=new Date("January 07, 2026 10:00:00").getTime();
+setInterval(()=>{
+let now=new Date().getTime();
+let diff=target-now;
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((diff%(1000*60*60))/(1000*60));
+document.getElementById("countdown").innerHTML=
+`${d} Hari ${h} Jam ${m} Menit`;
+},1000);
+
+// SALIN REKENING
+function salin(text){
+navigator.clipboard.writeText(text);
+alert("Nomor rekening berhasil disalin");
+}
+
+// MUSIK
+function playMusic(){document.getElementById("music").play();}
+function toggleMusic(){
+let m=document.getElementById("music");
+m.paused?m.play():m.pause();
+}
+</script>
+
+</body>
+</html>
