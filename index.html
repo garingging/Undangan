@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Robin & Karmilah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUDIO -->
+<audio id="musik" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<!-- COVER -->
+<section id="cover">
+  <img src="cover.jpg" class="cover-bg">
+  <img src="cross.png" class="salib">
+
+  <div class="cover-box fade">
+    <h1>Pernikahan Kudus</h1>
+    <h2>Robin Damaik<br>&<br>Karmilah</h2>
+    <p>Dalam Kasih Tuhan Yesus Kristus</p>
+    <button onclick="bukaUndangan()">Buka Undangan</button>
+  </div>
+</section>
+
+<!-- ISI -->
+<section id="isi" class="hidden">
+
+  <!-- AYAT -->
+  <div class="ayat fade">
+    <p>
+      “Demikianlah mereka bukan lagi dua, melainkan satu.”<br>
+      <b>Matius 19:6</b>
+    </p>
+  </div>
+
+  <!-- MEMPELAI -->
+  <div class="mempelai">
+    <p><b>Robin Damaik</b><br>
+    Putra dari Bapak Rudin Damanik & Ibu Lesri Purba</p>
+
+    <p><b>Karmilah</b><br>
+    Putri dari Bapak Kasmin & Ibu Mari</p>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown">
+    <h3>Menuju Hari Bahagia</h3>
+    <div id="timer"></div>
+  </div>
+
+  <!-- ACARA -->
+  <div class="acara">
+    <h3>Pemberkatan Pernikahan</h3>
+    <p>📅 07 Januari 2026</p>
+    <p>⏰ 10.00 WIB – Selesai</p>
+    <p>📍 GKPS Mardosniuhur<br>Kec. Purba</p>
+
+    <h3>Acara Adat</h3>
+    <p>📅 07 Januari 2026</p>
+    <p>⏰ 12.00 WIB – Selesai</p>
+    <p>📍 Lapangan SDN Mardosniuhur<br>Kec. Purba</p>
+  </div>
+
+  <!-- GALERI -->
+  <div class="galeri">
+    <h3>Galeri Foto</h3>
+    <div class="grid">
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
+    </div>
+  </div>
+
+  <!-- KADO -->
+  <div class="kado">
+    <h3>Kado Pernikahan</h3>
+
+    <div class="rekening">
+      <img src="bri.png">
+      <p><b>BRI</b></p>
+      <p id="bri">802001012636536</p>
+      <p>A.n. Robin Damanik</p>
+      <button onclick="salin('bri')">Salin Rekening</button>
+    </div>
+
+    <div class="rekening">
+      <img src="bca.png">
+      <p><b>BCA</b></p>
+      <p id="bca">5876052926</p>
+      <p>A.n. Karmilah</p>
+      <button onclick="salin('bca')">Salin Rekening</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Terima kasih atas doa dan kehadiran Bapak/Ibu/Saudara/i</p>
+    <p>✝️ Tuhan Yesus Memberkati ✝️</p>
+  </footer>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
