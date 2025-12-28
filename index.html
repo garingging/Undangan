@@ -211,6 +211,33 @@ audio{ display:none; }
     position:relative;
     z-index:2;
 }
+
+    /* ===== BACKGROUND OPENING & COVER SAJA ===== */
+.opening,
+.cover{
+    position:relative;
+    background-image:url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* OVERLAY PUTIH AGAR TEKS JELAS */
+.opening::before,
+.cover::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.7);
+    z-index:0;
+}
+
+/* ISI DI ATAS BACKGROUND */
+.opening > *,
+.cover > *{
+    position:relative;
+    z-index:2;
+}
 </style>
 </head>
 
