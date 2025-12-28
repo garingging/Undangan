@@ -240,7 +240,6 @@ audio{ display:none; }
     filter:blur(0.5px);
 }
 
-<style>
 .cover{
     min-height:100vh;
     background-image: url("bg-sampul.jpg");
@@ -253,6 +252,15 @@ audio{ display:none; }
     text-align:center;
     padding:30px 20px;
 }
+
+.cover{
+    position:relative;
+    z-index:1;
+}
+
+.opening{
+    z-index:999;
+}    
 </style>
 </head>
 
@@ -260,10 +268,13 @@ audio{ display:none; }
 
 <!-- OPENING -->
 <div class="opening" id="opening">
-    <div class="cross">✝️</div>
+    <div class="cross">✝</div>
     <h1>Undangan Pernikahan</h1>
     <h2>Robin Damaik & Karmilah</h2>
+    <button onclick="openInvitation()">Buka Undangan</button>
+</div>
 
+<!-- COVER DEPAN -->
 <section class="cover">
     <div>
         <p>Kepada Yth</p>
@@ -272,8 +283,6 @@ audio{ display:none; }
         <h1>Robin Damaik</h1>
         <p>&</p>
         <h1>Karmilah</h1>
-
-        <button>Buka Undangan</button>
     </div>
 </section>
 
