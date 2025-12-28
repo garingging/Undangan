@@ -211,36 +211,6 @@ audio{ display:none; }
     position:relative;
     z-index:2;
 }
-
-/* ===== BACKGROUND UNTUK OPENING, COVER, MEMPELAI ===== */
-.opening,
-.cover,
-.section-premium{
-    position:relative;
-    background-image:url("bg.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
-
-/* OVERLAY AGAR TEKS JELAS */
-.opening::before,
-.cover::before,
-.section-premium::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(255,255,255,0.7);
-    z-index:0;
-}
-
-/* ISI DI ATAS BACKGROUND */
-.opening > *,
-.cover > *,
-.section-premium > *{
-    position:relative;
-    z-index:2;
-}
 </style>
 </head>
 
