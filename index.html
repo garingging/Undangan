@@ -54,20 +54,18 @@ button.gold{ background:#c9a24d; }
 @keyframes glow{
     from{opacity:.4} to{opacity:1}
 }
+.to-text{
+    margin:20px 0;
+    font-size:16px;
+}
 
 /* COVER */
 .cover{
     min-height:100vh;
-    background:url("bg-sampul.jpg") center/cover no-repeat;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px 20px;
 }
-
-/* FRAME FOTO */
 .frame{
     border:5px solid #c9a24d;
     padding:8px;
@@ -78,7 +76,6 @@ button.gold{ background:#c9a24d; }
     width:260px;
     border-radius:15px;
 }
-
 .verse{
     font-style:italic;
     margin:20px 0;
@@ -116,9 +113,10 @@ audio{ display:none; }
     z-index:99;
 }
 
-/* SECTION PREMIUM */
+/* ===== SUPER MEWAH ===== */
 .section-premium{
-    background:radial-gradient(circle at top, #ffffff, #f2efe6);
+    background:
+        radial-gradient(circle at top, #ffffff, #f2efe6);
     padding:70px 20px;
 }
 
@@ -149,43 +147,98 @@ audio{ display:none; }
     font-size:18px;
 }
 
-/* MEMPELAI */
+/* MEMPELAI SUPER PREMIUM */
+.mempelai{
+    margin-top:40px;
+}
 .mempelai-nama{
     font-family:'Playfair Display', serif;
     font-size:40px;
+    font-weight:600;
     background:linear-gradient(45deg,#b8912f,#f6e29f,#b8912f);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     margin:26px 0 8px;
+    letter-spacing:1.2px;
+    text-shadow:0 0 8px rgba(201,162,77,0.25);
+}
+.mempelai-keterangan{
+    font-size:15px;
+    color:#4f4f4f;
+    line-height:1.8;
 }
 .mempelai-pemisah{
     margin:35px 0;
     color:#c9a24d;
     font-size:30px;
 }
+.cross-mini{
+    font-size:28px;
+    color:#c9a24d;
+    margin-bottom:10px;
+}
 
-/* SECTION BUNGA */
+/* ANIMASI LEMBUT */
+.fade-up{
+    animation:fadeUp 1.3s ease forwards;
+}
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== SECTION DENGAN BUNGA JELAS ===== */
 .section-bunga{
     position:relative;
     overflow:hidden;
     background:#fafcf9;
     padding:80px 20px;
 }
-.section-bunga::before,
+
+/* BUNGA KIRI ATAS */
+.section-bunga::before{
+    content:"";
+    position:absolute;
+    top:-30px;
+    left:-30px;
+    width:180px;
+    height:180px;
+    background:
+      radial-gradient(circle at 30% 30%, #ffffff 0%, #ffffff 25%, transparent 26%),
+      radial-gradient(circle at 60% 40%, #f2f2f2 0%, #f2f2f2 22%, transparent 23%),
+      radial-gradient(circle at 45% 65%, #dfeee5 0%, #dfeee5 30%, transparent 31%);
+    opacity:0.55;
+    transform:rotate(-15deg);
+    z-index:0;
+}
+
+/* BUNGA KANAN BAWAH */
 .section-bunga::after{
     content:"";
     position:absolute;
+    bottom:-30px;
+    right:-30px;
     width:180px;
     height:180px;
-    opacity:.55;
     background:
-      radial-gradient(circle,#fff 0%,#fff 25%,transparent 26%),
-      radial-gradient(circle,#eaeaea 0%,#eaeaea 22%,transparent 23%),
-      radial-gradient(circle,#d6eadf 0%,#d6eadf 30%,transparent 31%);
+      radial-gradient(circle at 65% 60%, #ffffff 0%, #ffffff 26%, transparent 27%),
+      radial-gradient(circle at 40% 55%, #f0f0f0 0%, #f0f0f0 24%, transparent 25%),
+      radial-gradient(circle at 55% 35%, #d6eadf 0%, #d6eadf 32%, transparent 33%);
+    opacity:0.55;
+    transform:rotate(15deg);
+    z-index:0;
 }
-.section-bunga::before{ top:-30px; left:-30px; }
-.section-bunga::after{ bottom:-30px; right:-30px; }
-.section-bunga > *{ position:relative; z-index:2; }
+
+/* ISI SECTION DI ATAS BUNGA */
+.section-bunga > *{
+    position:relative;
+    z-index:2;
+}
+
+.section-bunga::before,
+.section-bunga::after{
+    filter:blur(0.5px);
+}
 </style>
 </head>
 
@@ -196,54 +249,98 @@ audio{ display:none; }
     <div class="cross">✝️</div>
     <h1>Undangan Pernikahan</h1>
     <h2>Robin Damaik & Karmilah</h2>
+
+    <div class="to-text">
+        Kepada Yth:<br>
+        <b id="guestName">Tamu Undangan</b>
+    </div>
+
     <button class="gold" onclick="openInvitation()">Buka Undangan</button>
 </div>
 
-<!-- COVER KEPADA YTH -->
-<section class="cover">
-    <p>Kepada Yth</p>
-    <h3 id="guestName2">Tamu Undangan</h3>
-    <h1>Robin Damaik</h1>
-    <p>&</p>
-    <h1>Karmilah</h1>
-</section>
+<!-- MUSIK -->
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-<!-- COVER FOTO -->
+<div class="music-btn">
+    <button class="gold" onclick="toggleMusic()">🎵</button>
+</div>
+
+<!-- COVER -->
 <section class="cover">
     <div class="cross">✝️</div>
+
     <div class="frame">
         <img src="foto.jpg">
     </div>
+
     <h2>Robin Damaik & Karmilah</h2>
+
     <p class="verse">
         “Demikianlah mereka bukan lagi dua, melainkan satu.”<br>
         <b>Matius 19:6</b>
     </p>
+
 </section>
 
 <!-- MEMPELAI -->
 <section class="section-premium">
-    <div class="ornament"><span>✝️</span></div>
+    <div class="ornament">
+        <span>✝️</span>
+    </div>
+
     <h2>Salam Kasih</h2>
-    <div class="mempelai">
+
+    <p>
+        Dengan penuh rasa syukur kepada Tuhan Yesus Kristus,<br>
+        kami mengundang Bapak/Ibu/Saudara/i untuk hadir<br>
+        dalam pernikahan kudus kami.
+    </p>
+
+    <div class="mempelai fade-up">
+
+        <div class="cross-mini">✝️</div>
+
         <div class="mempelai-nama">Robin Damaik</div>
-        <p>Putra dari Bapak Rudin Damanik & Ibu Lesri Purba</p>
+        <div class="mempelai-keterangan">
+            Putra dari<br>
+            Bapak Rudin Damanik & Ibu Lesri Purba
+        </div>
+
         <div class="mempelai-pemisah">&</div>
+
         <div class="mempelai-nama">Karmilah</div>
-        <p>Putri dari Bapak Kasmin & Ibu Mari</p>
+        <div class="mempelai-keterangan">
+            Putri dari<br>
+            Bapak Kasmin & Ibu Mari
+        </div>
+
     </div>
 </section>
 
 <!-- PEMBERKATAN -->
 <section class="section-bunga">
+    <div class="ornament"><span>✝️</span></div>
+
     <h2>Pemberkatan Pernikahan</h2>
-    <p>07 Januari 2026 • 10.00 WIB<br>GKPS Mardosniuhur</p>
+    <p>
+        📅 Rabu, 07 Januari 2026<br>
+        ⏰ 10.00 WIB – Selesai<br>
+        ⛪ GKPS Mardosniuhur<br>
+        📍 Kec. Purba
+    </p>
 </section>
 
 <!-- ADAT -->
 <section class="section-bunga">
     <h2>Acara Adat</h2>
-    <p>07 Januari 2026 • 12.00 WIB<br>Lapangan SD N. Mardosniuhur</p>
+    <p>
+        📅 Rabu, 07 Januari 2026<br>
+        ⏰ 12.00 WIB – Selesai<br>
+        📍 Lapangan SD N. Mardosniuhur<br>
+        Kec. Purba
+    </p>
 </section>
 
 <!-- GALERI -->
@@ -257,41 +354,59 @@ audio{ display:none; }
 <!-- HADIAH -->
 <section class="section-bunga">
     <h2>Hadiah Pernikahan</h2>
+    <p>Doa restu Anda adalah hadiah terindah bagi kami.</p>
+
+    <!-- BRI -->
     <div class="bank">
-        <b>BRI</b><br>802001012636536<br>a.n Robin Damanik
+        <img src="bri.png"><br>
+        <b>BRI</b><br>
+        802001012636536<br>
+        a.n Robin Damanik<br><br>
+        <button onclick="copyText('802001012636536')">SALIN</button>
     </div>
+
+    <!-- BCA -->
     <div class="bank">
-        <b>BCA</b><br>5876052926<br>a.n Karmilah
+        <img src="bca.png"><br>
+        <b>BCA</b><br>
+        5876052926<br>
+        a.n Karmilah<br><br>
+        <button onclick="copyText('5876052926')">SALIN</button>
     </div>
 </section>
 
 <footer>
-    <b>Tuhan Yesus Memberkati ✝️</b>
+    <p>
+        Terima kasih atas doa dan kehadiran Bapak/Ibu/Saudara/i.<br>
+        <b>Tuhan Yesus Memberkati ✝️</b>
+    </p>
 </footer>
 
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<div class="music-btn">
-    <button class="gold" onclick="toggleMusic()">🎵</button>
-</div>
-
 <script>
+/* BUKA UNDANGAN + MUSIC */
 function openInvitation(){
     document.getElementById("opening").classList.add("hidden");
     document.getElementById("music").play();
 }
 function toggleMusic(){
-    const m=document.getElementById("music");
+    let m=document.getElementById("music");
     m.paused ? m.play() : m.pause();
 }
 
-/* Nama tamu dari link */
-const params=new URLSearchParams(window.location.search);
-const guest=params.get("to");
+/* COPY REKENING */
+function copyText(text){
+    navigator.clipboard.writeText(text);
+    alert("Nomor rekening berhasil disalin");
+}
+
+/* NAMA TAMU OTOMATIS DARI LINK */
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("to");
+
 if(guest){
-    document.getElementById("guestName2").innerText=decodeURIComponent(guest);
+    const name = decodeURIComponent(guest);
+    document.getElementById("guestName").innerText = name;
+    document.getElementById("guestName2").innerText = name;
 }
 </script>
 
