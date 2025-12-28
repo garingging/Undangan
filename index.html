@@ -239,6 +239,20 @@ audio{ display:none; }
 .section-bunga::after{
     filter:blur(0.5px);
 }
+
+<style>
+.cover{
+    min-height:100vh;
+    background-image: url("bg-sampul.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 20px;
+}
 </style>
 </head>
 
@@ -250,13 +264,18 @@ audio{ display:none; }
     <h1>Undangan Pernikahan</h1>
     <h2>Robin Damaik & Karmilah</h2>
 
-    <div class="to-text">
-        Kepada Yth:<br>
-        <b id="guestName">Tamu Undangan</b>
-    </div>
+<section class="cover">
+    <div>
+        <p>Kepada Yth</p>
+        <h3 id="guestName2">Tamu Undangan</h3>
 
-    <button class="gold" onclick="openInvitation()">Buka Undangan</button>
-</div>
+        <h1>Robin Damaik</h1>
+        <p>&</p>
+        <h1>Karmilah</h1>
+
+        <button>Buka Undangan</button>
+    </div>
+</section>
 
 <!-- MUSIK -->
 <audio id="music" loop>
