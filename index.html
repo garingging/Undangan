@@ -187,57 +187,31 @@ audio{ display:none; }
     to{opacity:1; transform:translateY(0);}
 }
 
-/* ===== SECTION DENGAN BUNGA JELAS ===== */
+/* ===== SECTION DENGAN BACKGROUND + OVERLAY (OPS 3) ===== */
 .section-bunga{
     position:relative;
     overflow:hidden;
-    background:#fafcf9;
     padding:80px 20px;
+
+    background-image:url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
-/* BUNGA KIRI ATAS */
+/* OVERLAY PUTIH LEMBUT */
 .section-bunga::before{
     content:"";
     position:absolute;
-    top:-30px;
-    left:-30px;
-    width:180px;
-    height:180px;
-    background:
-      radial-gradient(circle at 30% 30%, #ffffff 0%, #ffffff 25%, transparent 26%),
-      radial-gradient(circle at 60% 40%, #f2f2f2 0%, #f2f2f2 22%, transparent 23%),
-      radial-gradient(circle at 45% 65%, #dfeee5 0%, #dfeee5 30%, transparent 31%);
-    opacity:0.55;
-    transform:rotate(-15deg);
+    inset:0;
+    background:rgba(255,255,255,0.78);
     z-index:0;
 }
 
-/* BUNGA KANAN BAWAH */
-.section-bunga::after{
-    content:"";
-    position:absolute;
-    bottom:-30px;
-    right:-30px;
-    width:180px;
-    height:180px;
-    background:
-      radial-gradient(circle at 65% 60%, #ffffff 0%, #ffffff 26%, transparent 27%),
-      radial-gradient(circle at 40% 55%, #f0f0f0 0%, #f0f0f0 24%, transparent 25%),
-      radial-gradient(circle at 55% 35%, #d6eadf 0%, #d6eadf 32%, transparent 33%);
-    opacity:0.55;
-    transform:rotate(15deg);
-    z-index:0;
-}
-
-/* ISI SECTION DI ATAS BUNGA */
+/* ISI DI ATAS BACKGROUND */
 .section-bunga > *{
     position:relative;
     z-index:2;
-}
-
-.section-bunga::before,
-.section-bunga::after{
-    filter:blur(0.5px);
 }
 </style>
 </head>
@@ -248,7 +222,7 @@ audio{ display:none; }
 <div class="opening" id="opening">
     <div class="cross">✝️</div>
     <h1>Undangan Pernikahan</h1>
-    <h2>Robin Damaik & Karmilah</h2>
+    <h2>Robin Damanik & Karmilah</h2>
 
     <div class="to-text">
         Kepada Yth:<br>
@@ -275,7 +249,7 @@ audio{ display:none; }
         <img src="foto.jpg">
     </div>
 
-    <h2>Robin Damaik & Karmilah</h2>
+    <h2>Robin Damanik & Karmilah</h2>
 
     <p class="verse">
         “Demikianlah mereka bukan lagi dua, melainkan satu.”<br>
